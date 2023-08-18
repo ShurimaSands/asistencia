@@ -11,28 +11,24 @@
     </ion-toolbar>
   </ion-header>
 
-  
+
 <!-- CREO EL FORMULARIO DE INICIO DE SESION -->
 
+  <div class="flex justify-center items-center h-screen">
+    <div class="w-96">
+      <ion-input label="Usuario" label-placement="floating" [(ngModel)]="user.usuario" fill="outline" placeholder=""></ion-input>
+      <div class="mt-4"> <!-- Agregamos un margen superior de 1rem (16 píxeles) -->
+        <ion-input label="Contraseña" label-placement="floating" [(ngModel)]="user.password" fill="outline" placeholder=""></ion-input>
+      </div>
 
-<ion-item lines="full">
-  <ion-label position="floating">Usuario</ion-label>
-  <ion-input type="text" [(ngModel)]="user.usuario" required></ion-input>
-</ion-item>
+      <ion-row class="mt-4"> <!-- Agregamos un margen superior de 1rem (16 píxeles) -->
+        <ion-col>
+          <ion-button (click)="iniciarSesion()" color="primary" expand="block" [routerLink]="['/home']">Iniciar</ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
 
-
-    <ion-item lines="full">
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" [(ngModel)]="user.password" required></ion-input>
-    </ion-item>
-
-    <ion-row>
-    
-      <ion-col>
-        <ion-button (click)="iniciarSesion()" color="danger" expand="block" [routerLink]="['/home']">Iniciar</ion-button>
-        
-      </ion-col>
-    </ion-row>
 
 
 
