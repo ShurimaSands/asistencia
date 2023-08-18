@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'alumnos',
     loadChildren: () => import('./alumnos/alumnos.module').then( m => m.AlumnosPageModule)
+  },
+  {
+    path: 'asisg',
+    loadChildren: () => import('./asisg/asisg.module').then( m => m.AsisgPageModule)
   }
 ];
 
