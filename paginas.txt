@@ -1,0 +1,3 @@
+INICIAL: Login
+Principal: Home
+Alumnnos: Alumnos

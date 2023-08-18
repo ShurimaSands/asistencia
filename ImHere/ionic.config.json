@@ -1,0 +1,7 @@
+{
+  "name": "ImHere",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
