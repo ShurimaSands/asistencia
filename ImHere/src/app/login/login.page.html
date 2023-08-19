@@ -4,25 +4,24 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="auth-form">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Iniciar Sesion</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" >
+
 
   <!-- CREO EL FORMULARIO DE INICIO DE SESION -->
   <div class="flex justify-center items-center h-screen">
-    <div class="w-96">
+
+    <div class="w-96"> <!-- ancho de 24 rem -->
+
       <ion-input label="Usuario" label-placement="floating" [(ngModel)]="user.usuario" fill="outline" placeholder=""></ion-input>
       <div class="mt-4"> <!-- Agregamos un margen superior de 1rem (16 píxeles) -->
-        <ion-input label="Contraseña" label-placement="floating" [(ngModel)]="user.password" fill="outline" placeholder=""></ion-input>
+        <ion-input type="password" label="Contraseña" label-placement="floating" [(ngModel)]="user.password" fill="outline" placeholder=""></ion-input>
       </div>
       <ion-row class="mt-4"> <!-- Agregamos un margen superior de 1rem (16 píxeles) -->
         <ion-col>
           <ion-button (click)="iniciarSesion()" color="primary" expand="block" [routerLink]="['/home']">Iniciar</ion-button>
         </ion-col>
       </ion-row>
+
     </div>
   </div>
 </ion-content>
