@@ -74,6 +74,22 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** duoc-blue **/
+  --ion-color-duoc-blue: #012C56;
+  --ion-color-duoc-blue-rgb: 1,44,86;
+  --ion-color-duoc-blue-contrast: #ffffff;
+  --ion-color-duoc-blue-contrast-rgb: 255,255,255;
+  --ion-color-duoc-blue-shade: #01274c;
+  --ion-color-duoc-blue-tint: #1a4167;
+
+  /** duoc-yellow **/
+  --ion-color-duoc-yellow: #F9BA14;
+  --ion-color-duoc-yellow-rgb: 249,186,20;
+  --ion-color-duoc-yellow-contrast: #000000;
+  --ion-color-duoc-yellow-contrast-rgb: 0,0,0;
+  --ion-color-duoc-yellow-shade: #dba412;
+  --ion-color-duoc-yellow-tint: #fac12c;
 }
 
 @media (prefers-color-scheme: light) {

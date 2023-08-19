@@ -1,22 +1,26 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Iniciar Sesion</ion-title>
+  <ion-toolbar color="duoc-blue">
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" >
-
-
+<ion-content [fullscreen]="true">
   <!-- CREO EL FORMULARIO DE INICIO DE SESION -->
   <div class="flex justify-center items-center h-screen">
 
-    <div class="w-96"> <!-- ancho de 24 rem -->
+    <div class="border-login w-96 border-2 py-8 px-2 rounded-md shadow-md">
+
+      <div class="flex items-center justify-center mb-4">
+        <ion-title class="text-center">Iniciar Sesión</ion-title>
+      </div>
 
       <ion-input label="Usuario" label-placement="floating" [(ngModel)]="user.usuario" fill="outline" placeholder=""></ion-input>
-      <div class="mt-4"> <!-- Agregamos un margen superior de 1rem (16 píxeles) -->
+
+      <div class="mt-4">
         <ion-input type="password" label="Contraseña" label-placement="floating" [(ngModel)]="user.password" fill="outline" placeholder=""></ion-input>
       </div>
-      <ion-row class="mt-4"> <!-- Agregamos un margen superior de 1rem (16 píxeles) -->
+
+      <ion-row class="mt-4">
         <ion-col>
           <ion-button (click)="iniciarSesion()" color="primary" expand="block" [routerLink]="['/home']">Iniciar</ion-button>
         </ion-col>
