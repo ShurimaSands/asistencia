@@ -2,3 +2,29 @@ INICIAL: Login
 Principal: Home
 Alumnnos: Alumnos
 Asistencia general: asisg
+
+Instalacion Tailwind:
+--PASO 1 ejecutar en el bash (por separado)
+npm install -D tailwindcss
+npx tailwindcss init
+
+--PASO 2 pegar en tailwind.config.js
+module.exports = {
+  content: ["./src/**/*.{html,js}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+--PASO 3 Pegar en el goblas.scss
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+--- primero
+ionic build
+--- segundo
+ionic cap add andoid
+--- tercero
+ionic cap open android

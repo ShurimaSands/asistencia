@@ -8,13 +8,36 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">home</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <p *ngIf="nombreUsuario">Bienvenido, {{ nombreUsuario }}.</p>
+  <div class="container flex justify-between">
+
+    <div>
+      <ion-title  *ngIf="nombreUsuario">Bienvenido, {{ nombreUsuario }}.</ion-title>
+    </div>
+
+    <div>
+      <ion-title>Fecha</ion-title>
+    </div>
+
+  </div>
+
+  <div>
+    <ion-card >
+
+      <ion-card-header>
+
+        <ion-card-title>Card Title</ion-card-title>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+
+      </ion-card-header>
+
+      <ion-card-content>
+        Here's a small text description for the card content. Nothing more, nothing less.
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
 
 
 
