@@ -5,9 +5,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" >
-  <div class="flex justify-center items-center h-screen">
+  <div class="flex justify-center items-center h-full">
 
     <div class="w-full max-w-sm p-4 bg-white border  rounded-lg shadow sm:p-6 md:p-8">
+
+      <ion-icon (click)="goBack()" name="arrow-back-outline"></ion-icon>
 
       <div class="space-y-6">
 
