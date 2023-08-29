@@ -15,14 +15,14 @@ export class LoginPage implements OnInit {
     password: ""
   };
 
-  constructor( 
+  constructor(
                 private router: Router,
                 private usuarioService: UsuarioService
                 ) { }
 
   ngOnInit() {
     console.log("HOLA!");
-   
+
   }
 
 
@@ -31,7 +31,11 @@ export class LoginPage implements OnInit {
 
     this.usuarioService.setNombreUsuario(this.user.usuario);
 
- 
+
     this.router.navigate(['/home']);
+  }
+
+  resetPass(){
+    this.router.navigate(['/resetp']);
   }
 }

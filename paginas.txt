@@ -2,6 +2,7 @@ INICIAL: Login
 Principal: Home
 Alumnnos: Alumnos
 Asistencia general: asisg
+recuperar contraseña: resetp
 
 Instalacion Tailwind:
 --PASO 1 ejecutar en el bash (por separado)

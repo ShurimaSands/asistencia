@@ -24,6 +24,10 @@ const routes: Routes = [
   {
     path: 'asisg',
     loadChildren: () => import('./asisg/asisg.module').then( m => m.AsisgPageModule)
+  },
+  {
+    path: 'resetp',
+    loadChildren: () => import('./resetp/resetp.module').then( m => m.ResetpPageModule)
   }
 ];
 

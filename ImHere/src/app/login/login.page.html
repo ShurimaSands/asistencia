@@ -14,7 +14,7 @@
 
       <div class="space-y-6">
 
-        <h5 class="text-xl font-medium text-gray-900 dark:text-black">Iniciar Sesion</h5>
+        <h5 class="text-xl font-bold text-gray-900 dark:text-black text-center">Iniciar Sesion</h5>
 
         <div>
           <ion-input [(ngModel)]="user.usuario" type="text" label="Usuario" label-placement="floating" fill="outline" placeholder="Usuario" required></ion-input>
@@ -35,7 +35,7 @@
 
           </div>
 
-          <a href="#" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">¿Recuperar Contraseña?</a>
+          <a (click)="resetPass()" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">¿Recuperar Contraseña?</a>
 
         </div>
 
