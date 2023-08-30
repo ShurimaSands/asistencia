@@ -1,0 +1,27 @@
+{
+    "asignatura": [
+        {
+            "name": "Programacion Movil",
+            "seccion":"PGY4121",
+            "profesor": "YARAVI LILIANA VILLEGAS DOMINGUEZ.",
+            "image":"proM.PNG"
+        
+        },
+        {
+            "name": "Estadistica",
+            "seccion":"MAT4140",
+            "profesor": "NATALIA ANDREA HERRERA MARTINEZ.",
+            "image":"ingInter.PNG"
+        
+        },
+
+        {
+            "name": "INGLÉS INTERMEDIO",
+            "seccion":"INI5111",
+            "profesor": "LESLIE EMILIA MORALES PALTA.",
+            "image":"esta.PNG"
+        
+        }
+     
+    ]
+}

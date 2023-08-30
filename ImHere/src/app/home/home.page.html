@@ -21,23 +21,32 @@
 
   </div>
 
-  <div>
-    <ion-card >
 
-      <ion-card-header>
 
-        <ion-card-title>Card Title</ion-card-title>
-        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+  <ion-row>
 
-      </ion-card-header>
+    <ion-col sizeLg="6" sizeMd="6" sizeXs="12" *ngFor="let ramo of asig">
+  
+      <ion-card>
+        <a href=""><img src="../../assets/imag/{{ramo.image}}"></a>
+        <div class="card-tittle">
+          <h1>{{ramo.name}}</h1>
+          <h3>{{ramo.seccion}}</h3>
+          <h2>{{ramo.profesor}}</h2>
+          
+         
+        </div>
+  
+  
+      </ion-card>
+  
+    </ion-col>
+  
+  
+   </ion-row>
 
-      <ion-card-content>
-        Here's a small text description for the card content. Nothing more, nothing less.
-      </ion-card-content>
 
-    </ion-card>
 
-  </div>
 
 
 
