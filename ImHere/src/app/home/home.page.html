@@ -25,12 +25,11 @@
 
     <ion-col sizeLg="6" sizeMd="6" sizeXs="12" *ngFor="let ramo of asig">
 
-      <ion-card>
-        
-        <a (click)="asislist()" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500"><img src="../../assets/imag/{{ramo.image}}" class="w-full"></a>
-        <div class="card-tittle">
-          <h1>{{ramo.name}}</h1>
-          <h3>{{ramo.seccion}}</h3>
+      <ion-card><img src="../../assets/imag/{{ramo.image}}" class="w-full">
+        <a (click)="asislist()" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500"></a>
+        <div class="card-tittle ml-2">
+          <h3 class="pb-1.5">{{ramo.seccion}}</h3>
+          <h1 class="pb-1.5">{{ramo.name}}</h1>
           <h2>{{ramo.profesor}}</h2>
         </div>
 
