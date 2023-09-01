@@ -16,6 +16,7 @@ export class HomePage implements OnInit {
   asig: any=[];
 
   constructor(
+    private router: Router,
     private http: HttpClient,
     private usuarioService: UsuarioService
   ) { }
@@ -45,6 +46,8 @@ export class HomePage implements OnInit {
             )
 
           }
-
+          asislist() {
+            this.router.navigate(['/asislist']);
+          }
 }
 

@@ -27,8 +27,9 @@
 
     <ion-col sizeLg="6" sizeMd="6" sizeXs="12" *ngFor="let ramo of asig">
 
-      <ion-card><img src="../../assets/imag/{{ramo.image}}" class="w-full">
-        <a href="/ImHere/src/app/asislist/asislist.page.html"></a>
+      <ion-card>
+        
+        <a (click)="asislist()" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500"><img src="../../assets/imag/{{ramo.image}}" class="w-full"></a>
         <div class="card-tittle">
           <h1>{{ramo.name}}</h1>
           <h3>{{ramo.seccion}}</h3>
