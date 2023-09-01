@@ -8,34 +8,29 @@ import { UsuarioService } from '../services/usuario.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
-
   user = {
     usuario: "",
     password: ""
   };
 
+  // Agrega la propiedad imagenUrl y asigna la ruta de la imagen en assets
+  imagenUrl: string = '/assets/imag/logo.png';
+
   constructor(
-                private router: Router,
-                private usuarioService: UsuarioService
-                ) { }
+    private router: Router,
+    private usuarioService: UsuarioService
+  ) { }
 
   ngOnInit() {
     console.log("HOLA!");
-
   }
 
-
-
   iniciarSesion() {
-
     this.usuarioService.setNombreUsuario(this.user.usuario);
-
-
     this.router.navigate(['/home']);
   }
 
-  resetPass(){
+  resetPass() {
     this.router.navigate(['/resetp']);
   }
 }
