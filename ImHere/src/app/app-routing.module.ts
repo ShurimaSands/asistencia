@@ -43,6 +43,14 @@ const routes: Routes = [
   {
     path: 'camara',
     loadChildren: () => import('./camara/camara.module').then( m => m.CamaraPageModule)
+  },
+  {
+    path: 'detalle',
+    loadChildren: () => import('./detalle/detalle.module').then( m => m.DetallePageModule)
+  },
+  {
+    path: 'genera',
+    loadChildren: () => import('./genera/genera.module').then( m => m.GeneraPageModule)
   }
 
 ];

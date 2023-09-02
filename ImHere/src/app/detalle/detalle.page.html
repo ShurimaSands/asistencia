@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>detalle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">detalle</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-row>
+
+    <ion-col sizeLg="6" sizeMd="6" sizeXs="12" >
+
+      <ion-card>
+        <a  ></a>
+        <div class="card-tittle ml-2">
+          <h3 class="pb-1.5">hora: "10:31 AM"</h3>
+          <h1 class="pb-1.5">Ing. En informatica</h1>
+          <h2>cantidad:"25 Estudiantes"</h2>
+        </div>
+
+      </ion-card>
+
+    </ion-col>
+
+   </ion-row>
+   <div>
+      <button (click)="asislist()"type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-600">
+        <p>Generar QR</p>
+      </button>
+    </div>
+    <br>
+    <br>
+    <div>
+      <button (click)="backPage()"type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-600">
+        <p>Volver</p>
+      </button>
+    </div>
+
+
+</ion-content>

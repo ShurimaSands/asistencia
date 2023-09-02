@@ -1,0 +1,32 @@
+{
+    "asignatura": [
+        {
+           
+            "seccion":"PGY4121",
+            "hora": "10:31 AM",
+            "image":"proM.PNG",
+            "name": "Programacion Movil",
+            "cantidad":"25 Estudiantes"
+        
+        },
+        {
+           
+            "seccion":"PGY6684",
+            "hora": "12:31 AM",
+            "image":"proM.PNG",
+            "name": "Programacion Movil",
+            "cantidad":"25 Estudiantes"
+        
+        },
+        {
+           
+            "seccion":"PGY6546",
+            "hora": "14:31 AM",
+            "image":"proM.PNG",
+            "name": "Programacion Movil",
+            "cantidad":"25 Estudiantes"
+        
+        }
+     
+    ]
+}
