@@ -31,6 +31,18 @@ const routes: Routes = [
   },  {
     path: 'asislist',
     loadChildren: () => import('./asislist/asislist.module').then( m => m.AsislistPageModule)
+  },
+  {
+    path: 'vista-alumno',
+    loadChildren: () => import('./vista-alumno/vista-alumno.module').then( m => m.VistaAlumnoPageModule)
+  },
+  {
+    path: 'vista-profesor',
+    loadChildren: () => import('./vista-profesor/vista-profesor.module').then( m => m.VistaProfesorPageModule)
+  },
+  {
+    path: 'camara',
+    loadChildren: () => import('./camara/camara.module').then( m => m.CamaraPageModule)
   }
 
 ];
