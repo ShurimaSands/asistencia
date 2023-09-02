@@ -43,7 +43,7 @@ export class LoginPage implements OnInit {
       }
     } else {
       // Mostrar un mensaje de error si el usuario no se encuentra
-      this.mensajeError = 'Usuario incorrecto';
+      this.mensajeError = 'Credenciales ingresadas incorrectas';
     }
   }
 
