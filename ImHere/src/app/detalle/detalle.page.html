@@ -5,41 +5,35 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">detalle</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <ion-row>
+  <div class="flex flex-col justify-center items-center">
 
-    <ion-col sizeLg="6" sizeMd="6" sizeXs="12" >
+      <div class="w-full max-w-sm space-y-2.5">
 
-      <ion-card>
-        <a  ></a>
-        <div class="card-tittle ml-2">
-          <h3 class="pb-1.5">hora: "10:31 AM"</h3>
-          <h1 class="pb-1.5">Ing. En informatica</h1>
-          <h2>cantidad:"25 Estudiantes"</h2>
-        </div>
+        <ion-card>
 
-      </ion-card>
+          <div class="card-tittle ml-2 pt-1.5">
+            <h1>VIERNES, 30 de AGOSTO 8:00 a 10:50</h1>
+            <h2>PROGRAMACIÓN DE APLICACIONES MÓVILES</h2>
+            <h3>PGY4121-003D</h3>
+            <h4>Sala: Laboratorio de computación 4 (LC4)</h4>
+            <h4>N°Estudiantes:25 Estudiantes</h4>
+            <h4>Asistencia:</h4>
+            <h4>Sede: VIÑA DEL MAR</h4>
+          </div>
 
-    </ion-col>
+        </ion-card>
 
-   </ion-row>
-   <div>
-      <button (click)="asislist()"type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-600">
-        <p>Generar QR</p>
-      </button>
+        <button (click)="asislist()"type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-600">
+          <p class="font-bold">Generar QR</p>
+        </button>
+
+        <button (click)="backPage()"type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-600">
+          <p class="font-bold">Volver</p>
+        </button>
+
+      </div>
+
     </div>
-    <br>
-    <br>
-    <div>
-      <button (click)="backPage()"type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-600">
-        <p>Volver</p>
-      </button>
-    </div>
-
 
 </ion-content>

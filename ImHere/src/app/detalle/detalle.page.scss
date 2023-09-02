@@ -1,12 +1,15 @@
-.card-tittle{
-    font-size: 13px;
-    font-weight: bold;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    color: black;
-
+.card-tittle h1,h2,h3,h4{
+ padding-bottom: 6px;
+  color: var(--ion-color-dark);
 }
-
+.card-tittle h1{
+  font-weight: bold;
+  font-size: medium;
+}
+.card-tittle h2{
+  font-size: large;
+}
 .card-tittle h3{
-  color: var(--ion-color-medium)
+  font-size: medium;
+  color: var(--ion-color-medium);
 }
