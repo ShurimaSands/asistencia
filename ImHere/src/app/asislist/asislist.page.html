@@ -1,33 +1,41 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="duoc-blue">
     <ion-title>asislist</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button> <!-- Agregamos el botón de hamburguesa del menú lateral -->
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">asislist</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
   <ion-list>
+
     <ion-item>
-      <ion-label>presente viernes 30/08/2023</ion-label>
+      <ion-label>VIERNES, 30 de AGOSTO de 2023</ion-label>
+      <ion-note slot="end">Presente</ion-note>
     </ion-item>
+
     <ion-item>
-      <ion-label>presente viernes 30/08/2023</ion-label>
+      <ion-label class="ausente">VIERNES, 30 de AGOSTO de 2023</ion-label>
+      <ion-note class="ausente" slot="end">Ausente</ion-note>
     </ion-item>
+
     <ion-item>
-      <ion-label>presente viernes 30/08/2023</ion-label>
+      <ion-label>VIERNES, 30 de AGOSTO de 2023</ion-label>
+      <ion-note slot="end">Presente</ion-note>
     </ion-item>
+
     <ion-item>
-      <ion-label>presente viernes 30/08/2023</ion-label>
+      <ion-label class="ausente">VIERNES, 30 de AGOSTO de 2023</ion-label>
+      <ion-note class="ausente" slot="end">Ausente</ion-note>
     </ion-item>
+
     <ion-item>
-      <ion-label>presente viernes 30/08/2023</ion-label>
+      <ion-label class="ausente">VIERNES, 30 de AGOSTO de 2023</ion-label>
+      <ion-note class="ausente" slot="end">Ausente</ion-note>
     </ion-item>
+
   </ion-list>
-
-
 
 </ion-content>

@@ -90,7 +90,26 @@
   --ion-color-duoc-yellow-contrast-rgb: 0,0,0;
   --ion-color-duoc-yellow-shade: #dba412;
   --ion-color-duoc-yellow-tint: #fac12c;
+
+  /** ausente **/
+  --ion-color-ausente: #b80000;
+  --ion-color-ausente-rgb: 184,0,0;
+  --ion-color-ausente-contrast: #ffffff;
+  --ion-color-ausente-contrast-rgb: 255,255,255;
+  --ion-color-ausente-shade: #a20000;
+  --ion-color-ausente-tint: #bf1a1a;
+
+  /** presente **/
+  --ion-color-presente: #11bd05;
+  --ion-color-presente-rgb: 17,189,5;
+  --ion-color-presente-contrast: #ffffff;
+  --ion-color-presente-contrast-rgb: 255,255,255;
+  --ion-color-presente-shade: #0fa604;
+  --ion-color-presente-tint: #29c41e;
 }
+
+
+
 
 @media (prefers-color-scheme: light) {
   /*

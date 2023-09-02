@@ -1,0 +1,12 @@
+ion-note{
+  color: var(--ion-color-dark)
+}
+ion-label, ion-note{
+  font-weight: bold;
+}
+.ausente{
+  color: var(--ion-color-ausente)
+}
+.presente{
+  color: var(--ion-color-presente);
+}
