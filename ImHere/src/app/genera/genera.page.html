@@ -1,22 +1,28 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="duoc-blue">
     <ion-title>genera</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">genera</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
- 
-  <img [src]="imagenUrl" alt="Mi Imagen" class="mx-auto my-4 max-w-xs absolute top-0 mt-36">
-     
-  <button (click)="backPage()"type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-600">
-    <p>Volver</p>
-  </button>
+    <div class="h-4/5 flex flex-col justify-center items-center m-2.5">
 
+      <div class="w-full">
+        <ion-title class="font-bold text-2xl">Código QR</ion-title>
+      </div>
+
+      <ion-card class="w-full border-2 rounded flex justify-center">
+        <img [src]="imagenUrl" alt="Mi Imagen" >
+      </ion-card>
+
+      <ion-button (click)="backPage()" type="submit" color="duoc-yellow" class="w-full font-bold text-black rounded border-2 shadow-md">
+        VOLVER
+      </ion-button>
+
+    </div>
 
 </ion-content>

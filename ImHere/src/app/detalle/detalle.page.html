@@ -1,39 +1,40 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="duoc-blue">
     <ion-title>detalle</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
-  <div class="flex flex-col justify-center items-center">
+  <div class="h-4/5 flex flex-col items-center justify-center m-2.5">
 
-      <div class="w-full max-w-sm space-y-2.5">
-
-        <ion-card>
-
-          <div class="card-tittle ml-2 pt-1.5">
-            <h1>VIERNES, 30 de AGOSTO 8:00 a 10:50</h1>
-            <h2>PROGRAMACIÓN DE APLICACIONES MÓVILES</h2>
-            <h3>PGY4121-003D</h3>
-            <h4>Sala: Laboratorio de computación 4 (LC4)</h4>
-            <h4>N°Estudiantes:25 Estudiantes</h4>
-            <h4>Asistencia:</h4>
-            <h4>Sede: VIÑA DEL MAR</h4>
-          </div>
-
-        </ion-card>
-
-        <button (click)="asislist()"type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-600">
-          <p class="font-bold">Generar QR</p>
-        </button>
-
-        <button (click)="backPage()"type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-600">
-          <p class="font-bold">Volver</p>
-        </button>
-
+      <div class="w-full">
+        <ion-title class="font-bold text-2xl">Detalle Asignatura</ion-title>
       </div>
 
-    </div>
+      <ion-card class="card-tittle shadow-md border-2 w-full">
+        <ion-card-content>
+        <h1>VIERNES, 30 de AGOSTO 8:00 a 10:50</h1>
+        <h2>PROGRAMACIÓN DE APLICACIONES MÓVILES</h2>
+        <h3>PGY4121-003D</h3>
+        <h4>Sala: Laboratorio de computación 4 (LC4)</h4>
+        <h4>N°Estudiantes:25 Estudiantes</h4>
+        <h4>Asistencia:</h4>
+        <h4>Sede: VIÑA DEL MAR</h4>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-button (click)="asislist()" type="submit" color="duoc-yellow" class="w-full font-bold text-black rounded border-2 shadow-md">
+        GENERAR QR
+      </ion-button>
+
+      <ion-button (click)="backPage()" type="submit" color="duoc-yellow" class="w-full font-bold text-black rounded border-2 shadow-md">
+        VOLVER
+      </ion-button>
+
+  </div>
 
 </ion-content>

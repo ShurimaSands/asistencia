@@ -39,3 +39,7 @@ ionic cap open android
   (LA CUAL SE ESTARÁ PROYECTANDO )
 
   ##LA IDEA ES QUE EN HOME SE MUESTRE LAS ASIGNATURAS DEL MISMO DIA
+
+--INSTALAR ANGULAR/CLI PARA MATERIAL
+ angular/CLI
+ sudo npm install -g @angular/cli

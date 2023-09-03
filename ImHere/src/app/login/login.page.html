@@ -12,12 +12,11 @@
       <img [src]="imagenUrl" alt="Mi Imagen" class="relative mx-auto my-4 max-w-xs ">
     </div>
 
-
-    <div class="w-full max-w-sm p-4 bg-white border rounded-lg shadow sm:p-6 md:p-8 cuadro" color="duoc-blue">
+    <div class="w-full max-w-sm p-4 bg-white rounded-md shadow-2xl sm:p-6 md:p-8 cuadro" color="duoc-blue">
 
       <div class="space-y-6">
 
-        <h5 class="text-xl font-bold text-gray-900 text-center">Iniciar Sesión</h5>
+        <h5 class="text-xl font-bold text-gray-900 ">Iniciar Sesión</h5>
 
         <p *ngIf="mensajeError" class="msj-error font-bold text-sm text-center" [class.text-white]="mensajeError"> {{ mensajeError }}</p>
 
@@ -32,14 +31,10 @@
         <div class="flex items-start">
 
           <div class="flex items-start">
-
             <div class="flex items-center h-5">
-
               <ion-checkbox id="remember" class="" color="primary"></ion-checkbox>
               <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-black">Recordarme</label>
-
             </div>
-
           </div>
 
           <a (click)="resetPass()" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">¿Recuperar Contraseña?</a>
@@ -50,9 +45,10 @@
           <p class="font-bold">Empezar</p>
         </button>
 
-
       </div>
+
     </div>
 
   </div>
+
 </ion-content>
