@@ -8,12 +8,6 @@ import { UsuarioService } from '../services/usuario.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  usuarios = [
-    { usuario: 'alumno1', password: 'contrasena1', tipo: 'alumno' },
-    { usuario: 'profesor1', password: 'contrasena2', tipo: 'profesor' },
-    // Agrega más usuarios si es necesario
-  ];
-
   user = {
     usuario: '',
     password: '',
@@ -22,16 +16,19 @@ export class LoginPage implements OnInit {
   mensajeError: string = '';
   imagenUrl: string = '/assets/imag/logo.png';
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private usuarioService: UsuarioService
+  ) {}
 
   ngOnInit() {
     console.log('HOLA!');
   }
 
   iniciarSesion() {
-    // Buscar el usuario ingresado en la lista de usuarios en duro
-    const usuarioEncontrado = this.usuarios.find(
-      (u) => u.usuario === this.user.usuario && u.password === this.user.password
+    const usuarioEncontrado = this.usuarioService.validarCredenciales(
+      this.user.usuario,
+      this.user.password
     );
 
     if (usuarioEncontrado) {
@@ -42,7 +39,7 @@ export class LoginPage implements OnInit {
         this.router.navigate(['/vista-profesor']);
       }
     } else {
-      // Mostrar un mensaje de error si el usuario no se encuentra
+      // Mostrar un mensaje de error si las credenciales son incorrectas
       this.mensajeError = 'Credenciales ingresadas incorrectas';
     }
   }

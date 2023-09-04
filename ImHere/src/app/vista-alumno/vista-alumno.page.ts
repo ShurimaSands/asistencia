@@ -24,7 +24,7 @@ export class VistaAlumnoPage implements OnInit {
       ngOnInit() {
         this.nombreUsuario = this.usuarioService.getNombreUsuario(); // Obtén el nombre de usuario al inicializar la página
         this.getAsig().subscribe(res=>{
-          console.log("SON REGIONES",res)
+          console.log("NOMBRE USUARIO:",this.nombreUsuario)
           this.asig= res;
 
 
