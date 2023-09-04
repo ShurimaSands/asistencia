@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraResultType } from '@capacitor/camera';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-asislist',
@@ -8,7 +9,7 @@ import { Camera, CameraResultType } from '@capacitor/camera';
 })
 export class AsislistPage implements OnInit {
   imageSource: any;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -21,5 +22,9 @@ export class AsislistPage implements OnInit {
     });
      this.imageSource=image.dataUrl;
 
-}
+  }
+
+  backPage() {
+    this.router.navigate(['/vista-alumno']);
+  }
 }
