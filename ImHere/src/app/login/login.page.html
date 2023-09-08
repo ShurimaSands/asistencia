@@ -12,7 +12,7 @@
       <img [src]="imagenUrl" alt="Mi Imagen" class="relative mx-auto my-4 max-w-xs ">
     </div>
 
-    <div class="w-full max-w-sm p-4 bg-white rounded-md shadow-2xl sm:p-6 md:p-8 cuadro" color="duoc-blue">
+    <div class="w-full max-w-sm p-4 bg-white rounded-md shadow-2xl sm:p-6 md:p-8 cuadro">
 
       <div class="space-y-6">
 
@@ -21,7 +21,7 @@
         <p *ngIf="mensajeError" class="msj-error font-bold text-sm text-center" [class.text-white]="mensajeError"> {{ mensajeError }}</p>
 
         <div>
-          <ion-input [(ngModel)]="user.usuario" type="text" label="Usuario" label-placement="floating" fill="outline" placeholder="Usuario" required></ion-input>
+          <ion-input [(ngModel)]="user.usuario" type="text" label="Usuario" label-placement="floating" fill="outline" placeholder=" Usuario" required></ion-input>
         </div>
 
         <div>
@@ -41,7 +41,8 @@
 
         </div>
 
-        <ion-button (click)="iniciarSesion()" color="duoc-yellow" type="submit" class="w-full font-bold text-black rounded shadow-md">Iniciar</ion-button>
+        <ion-button color="duoc-yellow" (click)="iniciarSesion()" class="w-full font-bold text-black rounded shadow-md">Iniciar</ion-button>
+
       </div>
 
     </div>
