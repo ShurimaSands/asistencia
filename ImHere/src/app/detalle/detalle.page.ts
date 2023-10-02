@@ -16,7 +16,7 @@ export class DetallePage implements OnInit {
   ngOnInit() {
   }
   asislist() {
-    this.router.navigate(['/genera']);
+    this.router.navigate(['/home']);
   }
   backPage() {
     this.router.navigate(['/vista-profesor']);

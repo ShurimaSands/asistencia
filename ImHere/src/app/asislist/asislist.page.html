@@ -44,9 +44,12 @@
 
   </div>
 
-  <div class="flex justify-center m-2">
-    <ion-button (click)="takePicture()" color="duoc-yellow" class="w-full shadow-lg font-bold text-black">Escanear</ion-button>
-  </div>
+   <ion-button 
+    expand="block" 
+    class="ion-margin" 
+    (click)="startScan()">
+    Scan
+  </ion-button>
 
   <div class="flex justify-center m-2">
     <ion-button (click)="backPage()" color="duoc-yellow" class="w-full shadow-lg font-bold text-black">VOLVER</ion-button>

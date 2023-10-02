@@ -8,6 +8,7 @@ import { GeneraPageRoutingModule } from './genera-routing.module';
 
 import { GeneraPage } from './genera.page';
 
+
 @NgModule({
   imports: [
     CommonModule,

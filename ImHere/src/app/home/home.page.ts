@@ -1,53 +1,93 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { UsuarioService } from '../services/usuario.service';
-import {HttpClient} from '@angular/common/http';
-import {map } from 'rxjs/operators';
-
+import { Component, OnDestroy, OnInit } from '@angular/core';
+// import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
+import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
+import * as JsBarcode from 'jsbarcode';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit {
-  nombreUsuario: string = ''; // Variable para almacenar el nombre de usuario
+export class HomePage implements OnInit, OnDestroy {
 
-  asig: any=[];
+  // https://www.npmjs.com/package/angularx-qrcode
+  // https://www.npmjs.com/package/jsbarcode
+  qrCodeString = 'CHUPA EL PERRO XD';
+  barCodeString = '12345566765';
+  scannedResult: any;
+  // barScannedResult: any;
+  content_visibility = '';
 
   constructor(
-    private router: Router,
-    private http: HttpClient,
-    private usuarioService: UsuarioService
-  ) { }
+    // private barcodeScanner: BarcodeScanner
+    ) {}
 
-  
-      ngOnInit() {
-        this.nombreUsuario = this.usuarioService.getNombreUsuario(); // Obtén el nombre de usuario al inicializar la página
-        this.getAsig().subscribe(res=>{
-          console.log("SON REGIONES",res)
-          this.asig= res;
+  ngOnInit(): void {
+    JsBarcode("#barcode", this.barCodeString, {
+      // format: "pharmacode",
+      lineColor: "#0aa",
+      width:4,
+      height:200,
+      displayValue: false
+    });
+  }
 
+  // startScan() {
+  //   this.barcodeScanner.scan().then(barcodeData => {
+  //     console.log('Barcode data', barcodeData);
+  //     this.scannedResult = barcodeData?.text;
+  //    }).catch(err => {
+  //        console.log('Error', err);
+  //    });
+  // }
 
-      });
-      
+  async checkPermission() {
+    try {
+      // check or request permission
+      const status = await BarcodeScanner.checkPermission({ force: true });
+      if (status.granted) {
+        // the user granted permission
+        return true;
       }
+      return false;
+    } catch(e) {
+      console.log(e);
+    }
+  }
 
+  async startScan() {
+    try {
+      const permission = await this.checkPermission();
+      if(!permission) {
+        return;
+      }
+      await BarcodeScanner.hideBackground();
+      document.querySelector('body').classList.add('scanner-active');
+      this.content_visibility = 'hidden';
+      const result = await BarcodeScanner.startScan();
+      console.log(result);
+      BarcodeScanner.showBackground();
+      document.querySelector('body').classList.remove('scanner-active');
+      this.content_visibility = '';
+      if(result?.hasContent) {
+        this.scannedResult = result.content;
+        console.log(this.scannedResult);
+      }
+    } catch(e) {
+      console.log(e);
+      this.stopScan();
+    }
+  }
 
+  stopScan() {
+    BarcodeScanner.showBackground();
+    BarcodeScanner.stopScan();
+    document.querySelector('body').classList.remove('scanner-active');
+    this.content_visibility = '';
+  }
 
-          getAsig(){
-            return this.http
-            .get("assets/files/asignatura.json")
-            .pipe(
-              map((res:any)=>{
-                return res.asignatura
+  ngOnDestroy(): void {
+      this.stopScan();
+  }
 
-              })
-            )
-
-          }
-          asislist() {
-            this.router.navigate(['/asislist']);
-          }
 }
-
