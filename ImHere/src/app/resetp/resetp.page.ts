@@ -7,7 +7,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./resetp.page.scss'],
 })
 export class ResetpPage implements OnInit {
-
+  imagenUrl: string = '/assets/imag/logo.png';
   constructor(
     private router: Router
   ) { }

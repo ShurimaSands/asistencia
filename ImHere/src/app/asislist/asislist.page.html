@@ -11,7 +11,7 @@
 
 
 
-  <div class="border-2 p-2 m-2 rounded h-1/2 shadow-lg">
+  <div class="border-2 p-2 m-2.5 rounded h-1/2 shadow-lg">
 
     <ion-list>
 
@@ -44,15 +44,18 @@
 
   </div>
 
-   <ion-button 
-    expand="block" 
-    class="ion-margin" 
-    (click)="startScan()">
-    Scan
-  </ion-button>
 
-  <div class="flex justify-center m-2">
-    <ion-button (click)="backPage()" color="duoc-yellow" class="w-full shadow-lg font-bold text-black">VOLVER</ion-button>
+
+  <div class="m-2.5">
+    <ion-button
+      expand="block"
+      color="duoc-yellow"
+      class="w-full font-bold text-black rounded shadow-md"
+      (click)="startScan()">
+      Scan
+    </ion-button>
+
+    <ion-button (click)="backPage()" color="duoc-yellow" class="w-full shadow-lg font-bold text-black rounded">VOLVER</ion-button>
   </div>
 
 </ion-content>

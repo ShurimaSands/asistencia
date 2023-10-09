@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 // import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 import * as JsBarcode from 'jsbarcode';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   // https://www.npmjs.com/package/angularx-qrcode
   // https://www.npmjs.com/package/jsbarcode
-  qrCodeString = 'CHUPA EL PERRO XD';
+  qrCodeString = 'Programación Movil';
   barCodeString = '12345566765';
   scannedResult: any;
   // barScannedResult: any;
@@ -20,6 +21,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   constructor(
     // private barcodeScanner: BarcodeScanner
+    private router: Router
     ) {}
 
   ngOnInit(): void {
@@ -88,6 +90,10 @@ export class HomePage implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
       this.stopScan();
+  }
+
+  backPage(){
+    this.router.navigate(['/detalle'])
   }
 
 }

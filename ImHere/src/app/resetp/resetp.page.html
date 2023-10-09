@@ -4,24 +4,27 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" >
-  <div class="flex justify-center items-center h-5/6">
-
-    <div class="w-full max-w-sm p-4 bg-white border-2  rounded-lg shadow-md sm:p-6 md:p-8">
-
-      <div class="space-y-6">
-
-        <h5 class="text-xl font-bold text-gray-900 dark:text-black">Restablecer Contraseña</h5>
-
-        <div>
-          <ion-input type="email" label="email" label-placement="floating" fill="outline" placeholder="" required></ion-input>
-        </div>
-
-        <ion-button color="duoc-yellow" class="w-full font-bold text-black shadow-md rounded" >Enviar</ion-button>
-
-      </div>
-
+<ion-content [fullscreen]="true">
+  <div class="flex flex-col justify-center items-center h-4/5 m-2.5">
+    <div>
+      <img [src]="imagenUrl" alt="Mi Imagen" class="relative mx-auto my-4 max-w-xs ">
     </div>
-
+      <div class="m-2 text-center">
+        <h5 class="text-xl font-light text-black">Restablece tu Contraseña</h5>
+      </div>
+    <div class="border-2 rounded-xl shadow w-full cuadro">
+      <div class="m-2.5">
+      <p class="font-bold text-white">Ingresa tu correo institucional y te daremos accesso para restablecer tu contraseña.</p>
+      </div>
+      <div class="flex justify-center flex-col items-center m-2">
+        <ion-input class="text-white" label="Email" label-placement="floating" fill="outline" placeholder="@" required></ion-input>
+      </div>
+      <div class="flex justify-center m-2">
+        <ion-button color="duoc-yellow" class="rounded w-full font-bold text-black">Enviar</ion-button>
+      </div>
+      <div class="flex justify-center m-2">
+        <ion-button color="duoc-yellow" class="rounded w-full font-bold text-black">Volver</ion-button>
+      </div>
+    </div>
   </div>
 </ion-content>
