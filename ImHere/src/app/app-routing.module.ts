@@ -51,6 +51,10 @@ const routes: Routes = [
   {
     path: 'genera',
     loadChildren: () => import('./genera/genera.module').then( m => m.GeneraPageModule)
+  },
+  {
+    path: 'rest-conf-ps',
+    loadChildren: () => import('./rest-conf-ps/rest-conf-ps.module').then( m => m.RestConfPsPageModule)
   }
 
 ];
