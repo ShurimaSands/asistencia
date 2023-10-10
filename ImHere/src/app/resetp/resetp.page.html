@@ -14,16 +14,16 @@
       </div>
     <div class="border-2 rounded-xl shadow w-full cuadro">
       <div class="m-2.5">
-      <p class="font-bold text-white">Ingresa tu correo institucional y te daremos accesso para restablecer tu contraseña.</p>
+        <p class="font-bold text-white">Ingresa tu correo institucional y te daremos accesso para restablecer tu contraseña.</p>
       </div>
       <div class="flex justify-center flex-col items-center m-2">
         <ion-input class="text-white" label="Email" label-placement="floating" fill="outline" placeholder="@" required></ion-input>
       </div>
       <div class="flex justify-center m-2">
-        <ion-button color="duoc-yellow" class="rounded w-full font-bold text-black">Enviar</ion-button>
+        <ion-button (click)="send()" color="duoc-yellow" class="rounded w-full font-bold text-black">Enviar</ion-button>
       </div>
       <div class="flex justify-center m-2">
-        <ion-button color="duoc-yellow" class="rounded w-full font-bold text-black">Volver</ion-button>
+        <ion-button (click)="goBack()" color="duoc-yellow" class="rounded w-full font-bold text-black">Volver</ion-button>
       </div>
     </div>
   </div>

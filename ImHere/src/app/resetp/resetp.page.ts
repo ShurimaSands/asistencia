@@ -15,6 +15,9 @@ export class ResetpPage implements OnInit {
   ngOnInit() {
   }
 
+  send(){
+    this.router.navigate(['/rest-conf-ps'])
+  }
   goBack(){
     this.router.navigate(['/login'])
   }

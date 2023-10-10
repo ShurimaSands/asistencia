@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rest-conf-ps.page.scss'],
 })
 export class RestConfPsPage implements OnInit {
-
+  imagenUrl: string = '/assets/imag/logo.png';
   constructor() { }
 
   ngOnInit() {

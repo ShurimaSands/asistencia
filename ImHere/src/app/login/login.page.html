@@ -24,13 +24,17 @@
           <div class="flex items-start">
             <div class="flex items-center h-5">
               <ion-checkbox id="remember" class="" color="primary"></ion-checkbox>
-              <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-black">Recordarme</label>
+              <label for="remember" class="ml-2 font-bold">Recordarme</label>
             </div>
           </div>
-          <a (click)="resetPass()" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">¿Recuperar Contraseña?</a>
         </div>
         <ion-button color="duoc-yellow" (click)="iniciarSesion()" class="w-full font-bold text-black rounded shadow-md">Iniciar</ion-button>
       </div>
+      <div>
+        <a (click)="resetPass()" class="font-bold text-xl underline text-white">Recuperar Contraseña</a>
+      </div>
+    </div>
+    <div class="flex flex-col items-center mt-2">
     </div>
   </div>
 </ion-content>

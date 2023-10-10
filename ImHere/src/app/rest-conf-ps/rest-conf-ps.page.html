@@ -1,13 +1,27 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="duoc-blue">
     <ion-title>restConfPs</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">restConfPs</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="flex flex-col justify-center items-center h-4/5 m-2.5">
+    <div>
+      <img [src]="imagenUrl" alt="Mi Imagen" class="relative mx-auto my-4 max-w-xs ">
+    </div>
+    <div class="m-2 text-center">
+      <h5 class="text-xl font-light text-black">Restablece tu Contraseña</h5>
+    </div>
+    <div class="border-2 shadow-xl w-full rounded-xl cuadro">
+      <div class="flex flex-col justify-center items-center m-2.5">
+        <ion-input class="text-white" type="password" label="Nueva contraseña" label-placement="floating" fill="outline" placeholder="Enter text"></ion-input>
+      </div>
+      <div class="flex flex-col justify-center items-center m-2.5">
+        <ion-input class="text-white" type="password" label="Confirmar nueva contraseña" label-placement="floating" fill="outline" placeholder="Enter text"></ion-input>
+      </div>
+      <div class="flex justify-center m-2.5">
+        <ion-button color="duoc-yellow" class="rounded w-full font-bold text-black">Confirmar</ion-button>
+      </div>
+    </div>
+  </div>
 </ion-content>
