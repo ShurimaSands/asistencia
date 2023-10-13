@@ -23,19 +23,10 @@ export class LoginPage implements OnInit {
               private firebaseSvc: FirebaseService
               ) {}
 
-
-
-
-
   
   ngOnInit() {
     console.log('HOLA!');
   }
-
-
-
-
-
 
 
   submit (){
