@@ -28,7 +28,8 @@ const routes: Routes = [
   {
     path: 'resetp',
     loadChildren: () => import('./resetp/resetp.module').then( m => m.ResetpPageModule)
-  },  {
+  },
+  {
     path: 'asislist',
     loadChildren: () => import('./asislist/asislist.module').then( m => m.AsislistPageModule)
   },
@@ -55,7 +56,7 @@ const routes: Routes = [
   {
     path: 'rest-conf-ps',
     loadChildren: () => import('./rest-conf-ps/rest-conf-ps.module').then( m => m.RestConfPsPageModule)
-  }
+  },
 
 ];
 

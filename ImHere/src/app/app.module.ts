@@ -10,13 +10,18 @@ import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import { UsuarioService } from './services/usuario.service';
 
+
+//======Firebase=====
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment.prod';
 @NgModule({
   declarations: [AppComponent],
 
   imports: [BrowserModule, 
-            IonicModule.forRoot(), 
+            IonicModule.forRoot({mode: 'md'}), 
             AppRoutingModule,
-            HttpClientModule],
+            HttpClientModule,
+            AngularFireModule.initializeApp(environment.firebaseConfig)],
 
    providers: [
               { provide: RouteReuseStrategy, 

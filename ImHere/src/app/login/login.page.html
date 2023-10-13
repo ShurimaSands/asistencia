@@ -6,20 +6,59 @@
 
 <ion-content [fullscreen]="true">
 
+
   <div class="h-full flex flex-col justify-center items-center">
+
     <div>
       <img [src]="imagenUrl" alt="Mi Imagen" class="relative mx-auto my-4 max-w-xs ">
     </div>
+
+
+
+
     <div class="w-full max-w-sm p-4 bg-white rounded-xl shadow-2xl sm:p-6 md:p-8 cuadro">
       <div class="space-y-6">
         <h5 class="text-xl font-bold text-gray-900 ">Iniciar Sesión</h5>
         <p *ngIf="mensajeError" class="msj-error font-bold text-sm text-center" [class.text-white]="mensajeError"> {{ mensajeError }}</p>
-        <div>
-          <ion-input [(ngModel)]="user.usuario" type="text" label="Usuario" label-placement="floating" fill="outline" placeholder=" Usuario" required></ion-input>
-        </div>
-        <div>
-          <ion-input [(ngModel)]="user.password" type="password" label="Contraseña" label-placement="floating" fill="outline" placeholder="*******" required></ion-input>
-        </div>
+ 
+
+
+
+
+        <form [formGroup]="form" class="auth-form" (ngSubmit)="submit()" (keypress.enter)="submit()">
+
+          <app-custom-input 
+          autocomplete="email" 
+          icon="mail-outline" 
+          [control]="form.controls.email"
+          type="email"
+          label="Correo"
+          ></app-custom-input>
+      
+          <div class="validators" *ngIf="form.controls.email.errors && form.controls.email.touched">
+      
+              <div *ngIf="form.controls.email.errors?.['required']">El correo no es requerido</div>
+              <div *ngIf="form.controls.email.errors?.['email']">Ingrese un correo valido</div>
+          </div>
+      
+      
+          <app-custom-input
+          [control]="form.controls.password" 
+          icon="lock-closed-outline"
+          type="password"
+          label="Contraseña"
+          ></app-custom-input>
+      
+          <div class="validators" *ngIf="form.controls.password.errors && form.controls.password.touched">
+              <div *ngIf="form.controls.password.errors?.['required']">La contraseña es requerida</div>
+          </div>
+          <ion-button expand="block" mode="ios" class="submit" type="submit" [disabled]="form.invalid">
+            Ingresar
+            <ion-icon slot="end" name="log-in-outline"></ion-icon>
+        </ion-button>
+      </form>
+
+
         <div class="flex items-start">
           <div class="flex items-start">
             <div class="flex items-center h-5">
@@ -28,13 +67,18 @@
             </div>
           </div>
         </div>
-        <ion-button color="duoc-yellow" (click)="iniciarSesion()" class="w-full font-bold text-black rounded shadow-md">Iniciar</ion-button>
+
       </div>
       <div>
-        <a (click)="resetPass()" class="font-bold text-xl underline text-white">Recuperar Contraseña</a>
+        <a class="font-bold text-xl underline text-white">Recuperar Contraseña</a>
       </div>
     </div>
-    <div class="flex flex-col items-center mt-2">
-    </div>
+    <div class="flex flex-col items-center mt-2">    </div>
+
+    
   </div>
+
+
 </ion-content>
+
+
