@@ -14,6 +14,11 @@ import { UsuarioService } from './services/usuario.service';
 //======Firebase=====
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment.prod';
+
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'; // Asegúrate de agregar esta línea
+
+
 @NgModule({
   declarations: [AppComponent],
 
@@ -21,7 +26,9 @@ import { environment } from 'src/environments/environment.prod';
             IonicModule.forRoot({mode: 'md'}), 
             AppRoutingModule,
             HttpClientModule,
-            AngularFireModule.initializeApp(environment.firebaseConfig)],
+            AngularFireModule.initializeApp(environment.firebaseConfig), // Asegúrate de tener esta línea para inicializar AngularFire
+            AngularFirestoreModule, // Asegúrate de tener esta línea si también estás usando Firestore
+            AngularFireStorageModule,],
 
    providers: [
               { provide: RouteReuseStrategy, 

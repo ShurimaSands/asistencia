@@ -2,7 +2,7 @@
   <ion-toolbar color="duoc-blue">
     <ion-title>Alumno</ion-title>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button> <!-- Agregamos el botón de hamburguesa del menú lateral -->
+      <ion-menu-button></ion-menu-button> 
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -20,7 +20,7 @@
 
   <ion-row>
 
-    <ion-col sizeLg="6" sizeMd="6" sizeXs="12" *ngFor="let ramo of asig">
+    <ion-col sizeLg="6" sizeMd="6" sizeXs="12" *ngFor="let ramo of asignaturas">
 
       <ion-card>
         <a (click)="asislist()" ><img src="../../assets/imag/{{ramo.image}}" class="w-full"></a>
@@ -35,11 +35,6 @@
     </ion-col>
 
    </ion-row>
-
-
-
-
-
 
 
 </ion-content>
