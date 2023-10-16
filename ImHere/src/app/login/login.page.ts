@@ -10,34 +10,41 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  spinner: boolean = false;
   form = new FormGroup({
     email: new FormControl('',[Validators.required, Validators.email]),
     password: new FormControl('',[Validators.required])
   })
 
-  
+
   mensajeError: string = '';
   imagenUrl: string = '/assets/imag/logo.png';
 
-  constructor(private router: Router, 
+  constructor(private router: Router,
               private firebaseSvc: FirebaseService
               ) {}
 
-  
+
   ngOnInit() {
     console.log('HOLA!');
   }
-
+  go(){
+    this.router.navigate(['/resetp'])
+  }
 
   submit (){
     if (this.form.valid){
+      this.spinner = true;
       this.firebaseSvc.signIn(this.form.value as User).then(res =>{
         console.log(res);
 
         // Extrae el dominio del correo electrónico
         const email = this.form.get('email').value;
         const domain = email.split('@')[1];
-
+        //tiempo de spinner
+        setTimeout(() => {
+          this.spinner = false;
+        }, 3000);
         // Redirecciona basado en el dominio
         if (domain === 'duocuc.cl') {
           this.router.navigate(['/vista-alumno']); // Redirige a la vista de alumno
@@ -48,9 +55,5 @@ export class LoginPage implements OnInit {
         }
       })
     }
-  }
-
-  resetPass() {
-    this.router.navigate(['/resetp']);
   }
 }

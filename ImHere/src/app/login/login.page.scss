@@ -1,17 +1,15 @@
 .cuadro{
   background-color: var(--ion-color-duoc-blue)
 }
-h5,
-ion-input,
-label{
-  color: var(--ion-color-light)
-}
 .text-white {
   color: white;
 }
-.msj-error{
+.validators{
   color: var(--ion-color-danger);
 }
 a{
   color: var(--ion-color-duoc-blue)
+}
+.submit{
+  background-color: var(--ion-color-duoc-yellow);
 }

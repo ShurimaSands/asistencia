@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-rest-conf-ps',
@@ -7,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestConfPsPage implements OnInit {
   imagenUrl: string = '/assets/imag/logo.png';
-  constructor() { }
+  constructor(private router: Router) { }
 
+  go(){
+    this.router.navigate(['/login'])
+  }
   ngOnInit() {
   }
 
