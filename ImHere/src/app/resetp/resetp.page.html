@@ -1,30 +1,63 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="duoc-blue">
-    <ion-title>I'm Here</ion-title>
+    <ion-title>Recuperar contraseña</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <div class="flex flex-col justify-center items-center h-4/5 m-2.5">
+<ion-content [fullscreen]="true" class="min-h-screen flex items-center justify-center">
+  <div class="flex flex-col justify-center items-center h-5/6 m-3.5">
     <div>
-      <img [src]="imagenUrl" alt="Mi Imagen" class="relative mx-auto my-4 max-w-xs ">
+      <img [src]="imagenUrl" alt="Mi Imagen" class="relative mx-auto my-4 max-w-xs">
     </div>
-      <div class="m-2 text-center">
-        <h5 class="text-xl font-light text-black">Restablece tu Contraseña</h5>
-      </div>
-    <div class="border-2 rounded-xl shadow w-full cuadro">
-      <div class="m-2.5">
-        <p class="font-bold text-white">Ingresa tu correo institucional y te daremos accesso para restablecer tu contraseña.</p>
-      </div>
-      <div class="flex justify-center flex-col items-center m-2">
-        <ion-input class="text-white" label="Email" label-placement="floating" fill="outline" placeholder="@" required></ion-input>
-      </div>
-      <div class="flex justify-center m-2">
-        <ion-button (click)="send()" color="duoc-yellow" class="boton rounded w-full font-bold text-black">Enviar</ion-button>
-      </div>
-      <div class="flex justify-center m-2">
-        <ion-button (click)="goBack()" color="duoc-yellow" class="boton rounded w-full font-bold text-black">Volver</ion-button>
-      </div>
+    <div class="flex justify-items-start">
+      <h5 class="text-xl font-bold text-gray-900">Recuperar contraseña</h5>
     </div>
+    <form [formGroup]="form" class="auth-form" (ngSubmit)="submit()" (keypress.enter)="submit()">
+      <div class="mb-4">
+        <app-custom-input
+          icon="mail-outline"
+          [autocomplete]=""
+          [control]="form.controls.email"
+          type="email"
+          label="Correo"
+          class="mb-2"
+        ></app-custom-input>
+        <div color="danger" class="validators font-bold text-red-500" *ngIf="form.controls.email.errors && form.controls.email.touched">
+          <div *ngIf="form.controls.email.errors?.['required']" class="mb-1">El correo es requerido</div>
+          <div *ngIf="form.controls.email.errors?.['email']" class="mb-1">Ingrese un correo válido</div>
+        </div>
+      </div>
+
+
+
+
+
+
+ 
+      <div class="flex justify-center mb-4">
+        <ion-button
+          color="duoc-yellow"
+          class="boton submit w-full font-bold text-black rounded-md"
+          type="submit"
+          [disabled]="form.invalid || spinner"
+         
+        >
+          <ng-container *ngIf="!spinner; else spinnerTemplate">
+            Ingresar
+            <ion-icon slot="end" name="arrow-forward"></ion-icon>
+          </ng-container>
+          <ng-template #spinnerTemplate>
+            <ion-spinner name="crescent" color="black"></ion-spinner>
+          </ng-template>
+        </ion-button>
+
+      </div>
+    </form>
+
+
+
+
   </div>
 </ion-content>
+
+

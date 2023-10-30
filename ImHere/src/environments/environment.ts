@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-    apiKey: "AIzaSyDDLswXAjN_8oxdJ3u2FsudmeqqU4hLRjA",
-    authDomain: "imhere-b0357.firebaseapp.com",
-    projectId: "imhere-b0357",
-    storageBucket: "imhere-b0357.appspot.com",
-    messagingSenderId: "216991918275",
-    appId: "1:216991918275:web:6e997815a0296bfbaa1a76"
+    apiKey: "AIzaSyDV7ye-8UFAmjxmt3Mx2wIyR0op7gNPv6M",
+    authDomain: "imhere-f2e5d.firebaseapp.com",
+    projectId: "imhere-f2e5d",
+    storageBucket: "imhere-f2e5d.appspot.com",
+    messagingSenderId: "1041219783669",
+    appId: "1:1041219783669:web:368c9de68e48468c706ebc"
   }
 };
 

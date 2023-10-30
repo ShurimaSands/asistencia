@@ -21,26 +21,26 @@ export class VistaAlumnoPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getAsignaturas(); 
+    // this.getAsignaturas(); 
   }
 
-  getAsignaturas() {
-    const url = 'https://imhere-b0357-default-rtdb.firebaseio.com/asignatura/asignatura.json'; 
-    this.http.get(url).subscribe(
-      (data: any) => {
-        this.asignaturas = Object.values(data); 
-        console.log("SON asignaturas", this.asignaturas);
-      },
-      (error) => {
-        console.error('Error al obtener datos de asignaturas:', error);
-      }
-    );
-  }
+  // getAsignaturas() {
+  //   const url = 'https://imhere-b0357-default-rtdb.firebaseio.com/asignatura/asignatura.json'; 
+  //   this.http.get(url).subscribe(
+  //     (data: any) => {
+  //       this.asignaturas = Object.values(data); 
+  //       console.log("SON asignaturas", this.asignaturas);
+  //     },
+  //     (error) => {
+  //       console.error('Error al obtener datos de asignaturas:', error);
+  //     }
+  //   );
+  // }
 
 
-  asislist() {
-    this.router.navigate(['/asislist']);
-  }
+  // asislist() {
+  //   this.router.navigate(['/asislist']);
+  // }
 
 
 }

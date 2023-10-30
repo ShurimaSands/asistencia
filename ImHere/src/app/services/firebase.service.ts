@@ -25,11 +25,17 @@ export class FirebaseService {
     return signInWithEmailAndPassword(getAuth(), user.email, user.password)
   }
 
+  //=============Registrar=======
+  signUp(user: User){
+    return createUserWithEmailAndPassword(getAuth(), user.email, user.password)
+  }
 
+//=======Actuliazar usuario========
+  updateUser(displayName: string){
+    return updateProfile(getAuth().currentUser,{ displayName})
+  }
 
-
-
-// SE ENVIA EMAIL
+  //=======Enviar email para restablecer contraseña========
   sendRecoveryEmail(email: string){
     return sendPasswordResetEmail(getAuth(), email);
   }

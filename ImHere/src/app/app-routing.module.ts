@@ -56,7 +56,11 @@ const routes: Routes = [
   {
     path: 'rest-conf-ps',
     loadChildren: () => import('./rest-conf-ps/rest-conf-ps.module').then( m => m.RestConfPsPageModule)
+  },  {
+    path: 'sign-up',
+    loadChildren: () => import('./sign-up/sign-up.module').then( m => m.SignUpPageModule)
   },
+
 
 ];
 

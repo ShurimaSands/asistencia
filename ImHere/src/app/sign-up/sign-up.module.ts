@@ -4,18 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ResetpPageRoutingModule } from './resetp-routing.module';
+import { SignUpPageRoutingModule } from './sign-up-routing.module';
 
-import { ResetpPage } from './resetp.page';
+import { SignUpPage } from './sign-up.page';
 import { SharedModule } from 'src/app/shared/shared.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ResetpPageRoutingModule,
+    SignUpPageRoutingModule,
     SharedModule
   ],
-  declarations: [ResetpPage]
+  declarations: [SignUpPage]
 })
-export class ResetpPageModule {}
+export class SignUpPageModule {}

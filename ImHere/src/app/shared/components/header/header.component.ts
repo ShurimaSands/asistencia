@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
-// import { UtilsService } from 'src/app/service/utils.service';
+
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-header',
@@ -13,13 +14,13 @@ export class HeaderComponent  implements OnInit {
   @Input() isModal!: boolean;
  
 
-  // utilsSvc = inject(UtilsService);
+  utilsSvc = inject(UtilsService);
 
   ngOnInit() {}
 
-  // dismissModal(){
-  //   this.utilsSvc.dismissModal();
-  // }
+  dismissModal(){
+    this.utilsSvc.dismissModal();
+  }
 
 
 }
