@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators';
 export class VistaAlumnoPage implements OnInit {
 
   nombreUsuario: string = '';
-  asignaturas: any[] = []; 
+  asignaturas: any[] = [];
 
   constructor(
     private router: Router,
@@ -21,14 +21,14 @@ export class VistaAlumnoPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getAsignaturas(); 
+    this.getAsignaturas();
   }
 
   getAsignaturas() {
-    const url = 'https://prueba1-acdfd-default-rtdb.firebaseio.com/asignatura.json'; 
+    const url = 'https://prueba1-acdfd-default-rtdb.firebaseio.com/asignatura.json';
     this.http.get(url).subscribe(
       (data: any) => {
-        this.asignaturas = Object.values(data); 
+        this.asignaturas = Object.values(data);
         console.log("SON asignaturas", this.asignaturas);
       },
       (error) => {
@@ -39,7 +39,7 @@ export class VistaAlumnoPage implements OnInit {
 
 
   asislist() {
-    this.router.navigate(['/asislist']);
+    this.router.navigate(['/genera']);
   }
 
 

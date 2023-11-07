@@ -15,16 +15,16 @@ export class GeneraPage implements OnInit, OnDestroy {
 
   // https://www.npmjs.com/package/angularx-qrcode
   // https://www.npmjs.com/package/jsbarcode
-  qrCodeString = 'This is a secret qr code message';
+  qrCodeString = 'Programación Movil';
   barCodeString = '12345566765';
   scannedResult: any;
   // barScannedResult: any;
   content_visibility = '';
 
-///////////////
-  constructor(private router: Router) { }
-  ////////////////
-
+  constructor(
+    // private barcodeScanner: BarcodeScanner
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     JsBarcode("#barcode", this.barCodeString, {
@@ -91,10 +91,10 @@ export class GeneraPage implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-      this.stopScan();
+    this.stopScan();
   }
 
-  backPage() {
-    this.router.navigate(['/detalle']);
+  backPage(){
+    this.router.navigate(['/vista-alumno'])
   }
 }
