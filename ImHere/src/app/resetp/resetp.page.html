@@ -33,15 +33,14 @@
 
 
 
- 
+
       <div class="flex justify-center mb-4">
         <ion-button
           color="duoc-yellow"
           class="boton submit w-full font-bold text-black rounded-md"
           type="submit"
-          [disabled]="form.invalid || spinner"
-         
-        >
+          [disabled]="form.invalid || spinner">
+
           <ng-container *ngIf="!spinner; else spinnerTemplate">
             Ingresar
             <ion-icon slot="end" name="arrow-forward"></ion-icon>

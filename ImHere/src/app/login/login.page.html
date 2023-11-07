@@ -21,6 +21,7 @@
           type="email"
           label="Correo"
           class="mb-2"
+          required
         ></app-custom-input>
         <div color="danger" class="validators font-bold text-red-500" *ngIf="form.controls.email.errors && form.controls.email.touched">
           <div *ngIf="form.controls.email.errors?.['required']" class="mb-1">El correo es requerido</div>
@@ -34,6 +35,7 @@
           type="password"
           label="Contraseña"
           class="mb-2"
+          required
         ></app-custom-input>
         <div class="validators font-bold text-red-500" *ngIf="form.controls.password.errors && form.controls.password.touched">
           <div *ngIf="form.controls.password.errors?.['required']" class="mb-1">La contraseña es requerida</div>
