@@ -39,7 +39,11 @@ export class VistaAlumnoPage implements OnInit {
 
 
   asislist() {
+<<<<<<< HEAD
     this.router.navigate(['/genera']);
+=======
+    this.router.navigate(['/home']);
+>>>>>>> main
   }
 
 
