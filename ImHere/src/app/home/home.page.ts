@@ -95,5 +95,7 @@ export class HomePage implements OnInit, OnDestroy {
   backPage(){
     this.router.navigate(['/detalle'])
   }
-
+  GoList(){
+    this.router.navigate(['/asislist'])
+  }
 }
