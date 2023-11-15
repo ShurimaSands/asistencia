@@ -1,15 +1,14 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 // import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 import * as JsBarcode from 'jsbarcode';
 import {Router} from "@angular/router";
-import { QrDataService } from '../services/qr-data.service';
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-home-prof',
+  templateUrl: './home-prof.page.html',
+  styleUrls: ['./home-prof.page.scss'],
 })
-export class HomePage implements OnInit, OnDestroy {
+export class HomeProfPage implements OnInit {
   // https://www.npmjs.com/package/angularx-qrcode
   // https://www.npmjs.com/package/jsbarcode
   qrCodeString = 'Programación Movil';
@@ -17,14 +16,9 @@ export class HomePage implements OnInit, OnDestroy {
   scannedResult: any;
   // barScannedResult: any;
   content_visibility = '';
+  constructor(private router: Router) { }
 
-  constructor(
-    // private barcodeScanner: BarcodeScanner
-    private router: Router,
-    private qrDataService: QrDataService
-  ) {}
-
-  ngOnInit(): void {
+  ngOnInit() {
 
   }
   ionViewDidEnter(): void {
@@ -35,16 +29,6 @@ export class HomePage implements OnInit, OnDestroy {
       displayValue: false
     });
   }
-
-  // startScan() {
-  //   this.barcodeScanner.scan().then(barcodeData => {
-  //     console.log('Barcode data', barcodeData);
-  //     this.scannedResult = barcodeData?.text;
-  //    }).catch(err => {
-  //        console.log('Error', err);
-  //    });
-  // }
-
   async checkPermission() {
     try {
       // check or request permission
@@ -58,7 +42,6 @@ export class HomePage implements OnInit, OnDestroy {
       console.log(e);
     }
   }
-
   async startScan() {
     try {
       const permission = await this.checkPermission();
@@ -73,34 +56,29 @@ export class HomePage implements OnInit, OnDestroy {
       BarcodeScanner.showBackground();
       document.querySelector('body').classList.remove('scanner-active');
       this.content_visibility = '';
-
-      if (result?.hasContent) {
+      if(result?.hasContent) {
         this.scannedResult = result.content;
-        this.qrDataService.addScannedResult(this.scannedResult);
         console.log(this.scannedResult);
       }
-
     } catch(e) {
       console.log(e);
       this.stopScan();
     }
   }
-
   stopScan() {
     BarcodeScanner.showBackground();
     BarcodeScanner.stopScan();
     document.querySelector('body').classList.remove('scanner-active');
     this.content_visibility = '';
   }
-
   ngOnDestroy(): void {
     this.stopScan();
   }
-
   backPage(){
-    this.router.navigate(['/vista-alumno'])
+    this.router.navigate(['/vista-profesor'])
   }
   GoList(){
-    this.router.navigate(['/asislist'])
+    this.router.navigate(['/detalle'])
   }
 }
+

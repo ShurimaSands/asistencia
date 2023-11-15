@@ -12,7 +12,7 @@ import {map } from 'rxjs/operators';
   styleUrls: ['./vista-profesor.page.scss'],
 })
 export class VistaProfesorPage implements OnInit {
-  nombreUsuario: string = ''; 
+  nombreUsuario: string = '';
   asig: any=[];
 
   constructor(
@@ -21,32 +21,29 @@ export class VistaProfesorPage implements OnInit {
     private usuarioService: UsuarioService
   ) { }
 
-      ngOnInit() {
-        this.nombreUsuario = this.usuarioService.getNombreUsuario(); // Obtén el nombre de usuario al inicializar la página
-        this.getAsig().subscribe(res=>{
-          console.log("SON REGIONES",res)
-          this.asig= res;
+  ngOnInit() {
+    this.nombreUsuario = this.usuarioService.getNombreUsuario(); // Obtén el nombre de usuario al inicializar la página
+    this.getAsig().subscribe(res=>{
+      console.log("SON REGIONES",res)
+      this.asig= res;
 
 
-      });
-      
+    });
+  }
 
-}
+  getAsig(){
+    return this.http
+      .get("assets/files/asignaturap.json")
+      .pipe(
+        map((res:any)=>{
+          return res.asignatura
 
+        })
+      )
 
-getAsig(){
-  return this.http
-  .get("assets/files/asignaturap.json")
-  .pipe(
-    map((res:any)=>{
-      return res.asignatura
-
-    })
-  )
-
-}
-asislist() {
-  this.router.navigate(['/detalle']);
-}
+  }
+  asislist() {
+    this.router.navigate(['/home-prof']);
+  }
 }
 

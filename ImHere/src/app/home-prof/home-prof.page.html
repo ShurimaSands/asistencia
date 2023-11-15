@@ -1,0 +1,74 @@
+<ion-header [style.visibility]="content_visibility">
+  <ion-toolbar color="duoc-blue">
+    <ion-title>
+      Programacion Movil
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button> <!-- Agregamos el botón de hamburguesa del menú lateral -->
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [style.visibility]="content_visibility">
+
+  <div class="flex flex-col items-center justify-center m-2.5">
+
+    <ion-card class="w-full">
+
+      <ion-card-header class="font-bold text-black">
+        QR Code
+      </ion-card-header>
+
+      <!--      <ion-card-content class="flex justify-center">-->
+      <!--        <qrcode-->
+      <!--          [qrdata]="qrCodeString"-->
+      <!--          [width]="256"-->
+      <!--          [errorCorrectionLevel]="'M'">-->
+      <!--        </qrcode>-->
+      <!--      </ion-card-content>-->
+    </ion-card>
+
+    <!-- <ion-item *ngIf="scannedResult">
+      <ion-label class="ion-text-wrap">QR Code Scanned Result: {{scannedResult}}</ion-label>
+    </ion-item> -->
+
+    <!--    <ion-card class="w-full">-->
+    <!--      <ion-card-header class="font-bold text-black">-->
+    <!--        Bar Code-->
+    <!--      </ion-card-header>-->
+    <!--      <ion-card-content>-->
+    <!--        <img id="barcode"/>-->
+    <!--      </ion-card-content>-->
+    <!--    </ion-card>-->
+
+    <ion-item *ngIf="scannedResult">
+      <ion-label class="ion-text-wrap">Scanned Result: {{scannedResult}}</ion-label>
+    </ion-item>
+
+    <ion-button
+      color="duoc-yellow"
+      expand="block"
+      class="boton w-full font-bold text-black rounded shadow-md"
+      (click)="startScan()">
+      Scan
+    </ion-button>
+
+    <ion-button
+      color="duoc-yellow"
+      expand="block"
+      (click)="backPage()"
+      class="boton w-full font-bold text-black rounded shadow-md">
+      Volver
+    </ion-button>
+
+    <ion-button
+      color="duoc-yellow"
+      expand="block"
+      (click)="GoList()"
+      class="boton w-full font-bold text-black rounded shadow-md">
+      Ver asistencia
+    </ion-button>
+  </div>
+
+</ion-content>

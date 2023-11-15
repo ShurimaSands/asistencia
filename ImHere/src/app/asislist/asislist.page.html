@@ -15,31 +15,10 @@
 
     <ion-list>
 
-      <ion-item>
-        <ion-label>VIERNES, 30 de AGOSTO de 2023</ion-label>
-        <ion-note slot="end">Presente</ion-note>
-      </ion-item>
+      <ion-item *ngFor="let result of scannedResult">
+        <ion-label>{{ result }}</ion-label>
 
-      <ion-item>
-        <ion-label class="ausente">VIERNES, 30 de AGOSTO de 2023</ion-label>
-        <ion-note class="ausente" slot="end">Ausente</ion-note>
       </ion-item>
-
-      <ion-item>
-        <ion-label>VIERNES, 30 de AGOSTO de 2023</ion-label>
-        <ion-note slot="end">Presente</ion-note>
-      </ion-item>
-
-      <ion-item>
-        <ion-label class="ausente">VIERNES, 30 de AGOSTO de 2023</ion-label>
-        <ion-note class="ausente" slot="end">Ausente</ion-note>
-      </ion-item>
-
-      <ion-item>
-        <ion-label class="ausente">VIERNES, 30 de AGOSTO de 2023</ion-label>
-        <ion-note class="ausente" slot="end">Ausente</ion-note>
-      </ion-item>
-
     </ion-list>
 
   </div>
@@ -47,14 +26,6 @@
 
 
   <div class="m-2.5">
-    <ion-button
-      expand="block"
-      color="duoc-yellow"
-      class="boton w-full font-bold text-black rounded shadow-md"
-      (click)="startScan()">
-      Scan
-    </ion-button>
-
     <ion-button (click)="backPage()" color="duoc-yellow" class="boton w-full shadow-lg font-bold text-black rounded">VOLVER</ion-button>
   </div>
 

@@ -3,6 +3,7 @@ import { Camera, CameraResultType } from '@capacitor/camera';
 import {Router} from "@angular/router";
 import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 import * as JsBarcode from 'jsbarcode';
+import {QrDataService} from "../services/qr-data.service";
 
 @Component({
   selector: 'app-asislist',
@@ -19,9 +20,11 @@ export class AsislistPage implements OnInit {
 
 
   imageSource: any;
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private qrDataService: QrDataService) { }
 
   ngOnInit() {
+    this.scannedResult = this.qrDataService.getScannedResult();
   }
 
   takePicture = async () => {
@@ -30,7 +33,7 @@ export class AsislistPage implements OnInit {
       allowEditing: true,
       resultType: CameraResultType.Uri
     });
-     this.imageSource=image.dataUrl;
+    this.imageSource=image.dataUrl;
 
   }
 
@@ -82,7 +85,7 @@ export class AsislistPage implements OnInit {
   }
 
   ngOnDestroy(): void {
-      this.stopScan();
+    this.stopScan();
   }
 
   backPage() {
