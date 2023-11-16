@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-// import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 import * as JsBarcode from 'jsbarcode';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import { QrDataService } from '../services/qr-data.service';
+import {AngularFirestore} from "@angular/fire/compat/firestore";
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -17,15 +18,20 @@ export class HomePage implements OnInit, OnDestroy {
   scannedResult: any;
   // barScannedResult: any;
   content_visibility = '';
-
+  asignaturaActual: string = '';
   constructor(
     // private barcodeScanner: BarcodeScanner
     private router: Router,
-    private qrDataService: QrDataService
+    private qrDataService: QrDataService,
+    private firestore: AngularFirestore,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-
+    const asignaturaDetalle = this.route.snapshot.paramMap.get('asignaturaDetalle');
+    if (asignaturaDetalle) {
+      this.asignaturaActual = JSON.parse(asignaturaDetalle);
+    }
   }
   ionViewDidEnter(): void {
     JsBarcode("#barcode", this.barCodeString, {
@@ -35,15 +41,6 @@ export class HomePage implements OnInit, OnDestroy {
       displayValue: false
     });
   }
-
-  // startScan() {
-  //   this.barcodeScanner.scan().then(barcodeData => {
-  //     console.log('Barcode data', barcodeData);
-  //     this.scannedResult = barcodeData?.text;
-  //    }).catch(err => {
-  //        console.log('Error', err);
-  //    });
-  // }
 
   async checkPermission() {
     try {
@@ -76,10 +73,16 @@ export class HomePage implements OnInit, OnDestroy {
 
       if (result?.hasContent) {
         this.scannedResult = result.content;
+        this.asignaturaActual = 'programacion'
+        const uid = localStorage.getItem('currentUserId'); // -> recupera el uid del usuario logeado
         this.qrDataService.addScannedResult(this.scannedResult);
-        console.log(this.scannedResult);
+        if (uid){
+          this.firestore.collection('scannedQR').doc(uid).set({
+            code: this.scannedResult,
+            timestamp: new Date()
+          })
+        }
       }
-
     } catch(e) {
       console.log(e);
       this.stopScan();

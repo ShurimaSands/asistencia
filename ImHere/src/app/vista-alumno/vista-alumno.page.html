@@ -21,7 +21,7 @@
 
     <ion-col sizeLg="6" sizeMd="6" sizeXs="12" *ngFor="let ramo of asignaturas">
       <ion-card>
-        <a (click)="asislist()" ><img src="../../assets/imag/{{ramo.image}}" class="w-full"></a>
+        <a (click)="verDetalle(ramo)" ><img src="../../assets/imag/{{ramo.image}}" class="w-full"></a>
         <div class="card-tittle ml-2">
           <h3 class="pb-1.5">{{ramo.seccion}}</h3>
           <h1 class="pb-1.5">{{ramo.name}}</h1>
@@ -30,6 +30,6 @@
       </ion-card>
     </ion-col>
 
-   </ion-row>
+  </ion-row>
 
 </ion-content>

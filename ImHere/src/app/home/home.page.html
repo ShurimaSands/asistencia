@@ -12,8 +12,22 @@
 
 <ion-content [style.visibility]="content_visibility">
 
-  <div class="flex flex-col items-center justify-center m-2.5">
+  <div class="flex flex-col items-center justify-center m-2.5 h-4/5">
+    <div class="w-full">
+      <ion-title class="font-bold text-2xl">Detalle Asignatura</ion-title>
+    </div>
 
+    <ion-card class="card-tittle border shadow-md w-full">
+      <ion-card-content>
+        <h1>VIERNES, 30 de AGOSTO 8:00 a 10:50</h1>
+        <h2>{{asignaturaActual.name}}</h2>
+        <h3>{{asignaturaActual.seccion}}</h3>
+        <h4>{{asignaturaActual.profesor}}</h4>
+        <h4>N°Estudiantes:25 Estudiantes</h4>
+        <h4>Asistencia:</h4>
+        <h4>Sede: VIÑA DEL MAR</h4>
+      </ion-card-content>
+    </ion-card>
 
     <ion-button
       color="duoc-yellow"
@@ -22,7 +36,13 @@
       (click)="startScan()">
       Scan
     </ion-button>
-
+    <ion-button
+      color="duoc-yellow"
+      expand="block"
+      (click)="GoList()"
+      class="boton w-full font-bold text-black rounded shadow-md">
+      Ver asistencia
+    </ion-button>
     <ion-button
       color="duoc-yellow"
       expand="block"
@@ -30,17 +50,6 @@
       class="boton w-full font-bold text-black rounded shadow-md">
       Volver
     </ion-button>
-
-
-  <ion-button
-    color="duoc-yellow"
-    expand="block"
-    (click)="GoList()"
-    class="boton w-full font-bold text-black rounded shadow-md">
-    Ver asistencia
-  </ion-button>
-
-
   </div>
 
 </ion-content>

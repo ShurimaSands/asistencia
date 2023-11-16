@@ -1,91 +1,69 @@
-import { Component, OnInit } from '@angular/core';
-import { Camera, CameraResultType } from '@capacitor/camera';
-import {Router} from "@angular/router";
-import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
-import * as JsBarcode from 'jsbarcode';
-import {QrDataService} from "../services/qr-data.service";
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from "@angular/router";
+import { AngularFirestore } from "@angular/fire/compat/firestore";
+import { UtilsService } from "../services/utils.service";
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-asislist',
   templateUrl: './asislist.page.html',
   styleUrls: ['./asislist.page.scss'],
 })
-export class AsislistPage implements OnInit {
-  qrCodeString = 'This is a secret qr code message';
-  barCodeString = '12345566765';
-  scannedResult: any;
-  // barScannedResult: any;
-  content_visibility = '';
+export class AsislistPage implements OnInit, OnDestroy {
+  scannedResult: any[] = [];
+  subscription: Subscription | undefined;
 
-
-
-  imageSource: any;
-  constructor(private router: Router,
-              private qrDataService: QrDataService) { }
+  constructor(
+    private router: Router,
+    private firestore: AngularFirestore,
+    private utils: UtilsService
+  ) {}
 
   ngOnInit() {
-    this.scannedResult = this.qrDataService.getScannedResult();
+    this.getScanned();
   }
 
-  takePicture = async () => {
-    const image = await Camera.getPhoto({
-      quality: 90,
-      allowEditing: true,
-      resultType: CameraResultType.Uri
-    });
-    this.imageSource=image.dataUrl;
-
-  }
-
-
-
-  async checkPermission() {
-    try {
-      // check or request permission
-      const status = await BarcodeScanner.checkPermission({ force: true });
-      if (status.granted) {
-        // the user granted permission
-        return true;
-      }
-      return false;
-    } catch(e) {
-      console.log(e);
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
     }
   }
 
-  async startScan() {
+  async getScanned() {
+    const loading = await this.utils.loading();
+    await loading.present();
     try {
-      const permission = await this.checkPermission();
-      if(!permission) {
-        return;
+      const uid = localStorage.getItem('currentUserId');
+      console.log('UID:', uid);
+      if (uid) {
+        const path = `scannedQR`;
+        console.log('Path:', path);
+        if (this.subscription) {
+          this.subscription.unsubscribe();
+        }
+        this.subscription = this.firestore.collection<any>(path).valueChanges().subscribe((data: any[]) => {
+          console.log('Datos obtenidos:', data);
+          this.scannedResult = data.map(item => ({
+            ...item,
+            timestamp: item.timestamp.toDate()
+          }));
+        });
+      } else {
+        console.log('No se pudo obtener el UID del usuario');
       }
-      await BarcodeScanner.hideBackground();
-      document.querySelector('body').classList.add('scanner-active');
-      this.content_visibility = 'hidden';
-      const result = await BarcodeScanner.startScan();
-      console.log(result);
-      BarcodeScanner.showBackground();
-      document.querySelector('body').classList.remove('scanner-active');
-      this.content_visibility = '';
-      if(result?.hasContent) {
-        this.scannedResult = result.content;
-        console.log(this.scannedResult);
-      }
-    } catch(e) {
-      console.log(e);
-      this.stopScan();
+    } catch (error) {
+      console.error(error);
+      this.utils.presentToast({
+        message: 'Error al obtener los resultados del escaneo de QR.',
+        duration: 2500,
+        color: 'primary',
+        position: 'middle',
+        icon: 'alert-circle-outline'
+      });
+    } finally {
+      console.log('Fin de getScanned');
+      loading.dismiss();
     }
-  }
-
-  stopScan() {
-    BarcodeScanner.showBackground();
-    BarcodeScanner.stopScan();
-    document.querySelector('body').classList.remove('scanner-active');
-    this.content_visibility = '';
-  }
-
-  ngOnDestroy(): void {
-    this.stopScan();
   }
 
   backPage() {
