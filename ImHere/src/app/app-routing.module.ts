@@ -64,7 +64,11 @@ const routes: Routes = [
   {
     path: 'home-prof',
     loadChildren: () => import('./home-prof/home-prof.module').then( m => m.HomeProfPageModule)
+  },  {
+    path: 'asisprof',
+    loadChildren: () => import('./asisprof/asisprof.module').then( m => m.AsisprofPageModule)
   },
+
 
 
 ];

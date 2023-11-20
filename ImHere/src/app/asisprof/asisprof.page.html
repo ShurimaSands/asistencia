@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>asisprof</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="border-2 p-2 m-2.5 rounded h-1/2 shadow-lg">
+    <ion-list *ngFor="let result of scannedResult">
+      <ion-item>
+        <ion-label>{{result.timestamp | date: 'dd/MM/yyyy HH:mm'}} </ion-label>
+        <ion-label>Presente</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="m-2.5">
+    <ion-button (click)="backPage()" color="duoc-yellow" class="boton w-full shadow-lg font-bold text-black rounded">VOLVER</ion-button>
+  </div>
+</ion-content>

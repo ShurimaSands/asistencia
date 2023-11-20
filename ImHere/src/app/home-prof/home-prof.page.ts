@@ -119,6 +119,6 @@ export class HomeProfPage implements OnInit {
   }
 
   GoList(){
-    this.router.navigate(['/detalle'])
+    this.router.navigate(['/asisprof'])
   }
 }
