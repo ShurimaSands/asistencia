@@ -30,7 +30,7 @@ export class AuthGuard implements CanActivate {
 
         else {
           this.utilSvc.routerLink('/login')
-          resolve(false);
+          resolve(false)
 
         }
       })
