@@ -62,7 +62,14 @@ export class LoginPage implements OnInit {
       let path = `user/${uid}`;
       this.firebaseSvc.getDocument(path).then((user: User) => {
         this.utilsSvc.saveInLocalStorage('user', user);
-        this.utilsSvc.routerLink('/vista-alumno');
+
+        // Lógica condicional para redirigir a la página adecuada
+        if (user.email === 'shipporeyes@gmail.com') {
+          this.utilsSvc.routerLink('/vista-profesor');
+        } else {
+          this.utilsSvc.routerLink('/vista-alumno');
+        }
+
         this.form.reset();
         this.utilsSvc.presentToast({
           message: `Te damos la bienvenida ${user.name}`,

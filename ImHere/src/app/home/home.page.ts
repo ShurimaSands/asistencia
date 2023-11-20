@@ -1,9 +1,11 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 import * as JsBarcode from 'jsbarcode';
 import {ActivatedRoute, Router} from "@angular/router";
 import { QrDataService } from '../services/qr-data.service';
 import {AngularFirestore} from "@angular/fire/compat/firestore";
+import { FirebaseService } from '../services/firebase.service';
+import { UtilsService } from '../services/utils.service';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +15,11 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
 export class HomePage implements OnInit, OnDestroy {
   // https://www.npmjs.com/package/angularx-qrcode
   // https://www.npmjs.com/package/jsbarcode
+
+
+  
+  firebaseSvc = inject(FirebaseService);
+  utilsSvc = inject(UtilsService);
   qrCodeString = 'Programación Movil';
   barCodeString = '12345566765';
   scannedResult: any;
@@ -105,5 +112,12 @@ export class HomePage implements OnInit, OnDestroy {
   }
   GoList(){
     this.router.navigate(['/asislist'])
+
+    
+  }
+
+
+  signOut(){
+    this.firebaseSvc.signOut();
   }
 }
